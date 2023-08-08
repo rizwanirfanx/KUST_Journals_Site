@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="assets/css/manuscript-style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <section class="header">
+        <a href="" class="logo">Direct<span>Sciences</span></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.php">Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <a href="Editorial_Panel.html" class="dropbtn">Editorial Panel</a>
+                        <div class="dropdown-content">
+                            <a href="Editor_in_cheif.html">Editor_in_cheif</a>
+                            <a href="Editorial_Board.html">Editorial_Board</a>
+                        </div>
+                    </div></a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a href="manuscript.html">Manuscript Submission</a>
+                        <div class="dropdown-content">
+                            <a href="mysubmission.html">My Submission</a>
+                        </div>
+                    </div></a>
+                </li>
+                <li><a href="indexing.html">Indexing</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <a href="#" id="close"><i class="fa fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section><!-- Header section ends here -->
+
+    <div id="intro-bar">
+        You are submitting to <strong>International Journal of Pythonmatico.com</strong>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 text-center icon step"> <!-- onclick="togglePage('manuscript')" -->
+                <i class="fas fa-1 icon-number active active-icon"></i>
+                <h4>Manuscript</h4>
+            </div>
+
+            <div class="col-md-3 col-sm-6 text-center icon step"> <!-- onclick="togglePage('subject')" -->
+                <i class="fa-regular  fa-circle-check active-icon"></i>
+                <h4>Subject</h4>
+            </div>
+
+            <div class="col-md-3 col-sm-6 text-center icon step"> <!-- onclick="togglePage('authors')" -->
+                <i class="fas fa-3 icon-number active-icon"></i>
+                <h4>Authors</h4>
+            </div>
+
+            <div class="col-md-3 col-sm-6 text-center icon step"><!-- onclick="togglePage('preview')" -->
+                <i class="fa-regular   fa-eye active-icon"></i>
+                <h4>Preview</h4>
+            </div>
+        </div>
+
+        <div class="page-contents">
+            <!-- Content for Page 1 -->
+            <div id="manuscript" class="page-content">
+                <div class="content-container">
+                    <h2>Manuscript Details</h2>
+                    <form action="">
+                        <div class="form-field mb">
+                            <label for="field" class="mb">Manuscript Title</label>
+                            <input type="text" id="text-input1" name="manuscript-title"
+                                oninput="countWords('text-input1', this.value)" required>
+                            <p id="word-count1" class="word-count"> 0 /10 words</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="form-field mb">
+                            <label for="field" class="mb">Abstract</label>
+                            <input type="text" id="text-input2" name="abstract"
+                                oninput="countWords('text-input2', this.value)" required>
+                            <p id="word-count2" class="word-count"> 0 /100 words</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="form-field mb custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose Manuscript</label>
+                        </div>
+                        <p id="custom-file-name"></p>
+                    </form>
+                    <div class="next-prev-btns-next">
+                        <!-- <button class="prev" onclick="prevPage()">Previous</button> -->
+                        <button class="float-right" onclick="nextPage()">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content for Page 2 -->
+            <div id="subject" class="page-content" style="display: none;">
+                <div class="content-container">
+                    <h2>Keywords</h2>
+                    <p>Enter a keyword followed by the enter key or comma.</p>
+                    <p>Keywords can be made of more than one word e.g. 'Vitamin D' or 'Red Blood Cell'. </p>
+                    <form action="#">
+                        <div class="form-field">
+                            <!-- <label for="keywords">Keywords:</label> -->
+                            <input type="text" id="keywords" oninput="updateKeywords(this.value)"
+                                placeholder="Add a Keyword">
+                            <p id="keyword-count">You have selected 0 keywords</p>
+                        </div>
+                        <div id="added-keywords">
+                            <!-- Container for displaying added keywords -->
+                        </div>
+                    </form>
+                    <div class="next-prev-btns">
+                        <button class="prev" onclick="prevPage()">Previous</button>
+                        <button class="next" onclick="nextPage()">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content for Page 3 -->
+            <div id="authors" class="page-content" style="display: none;">
+                <!-- Your content for the third page here -->
+                <div class="content-container">
+                    <!-- Author Details Form -->
+                    <div class="author">
+                        <div class="author-switch">
+                            <!-- <h3><i class="fa-solid fa-sort"></i></h3> -->
+                            <h6><img src="./assets/images/updown.png" class="png-to-icon" /></h6>
+                            <h2>Muhammad Jamil</h2>
+                            <h5 class="you">You</h5>
+                            <h5 class="c-author">Corressponding author</h5>
+                        </div>
+                    </div>
+
+                    <!-- "Add Another Author" Button -->
+                    <div id="author-table">
+                        <table class="table table-bordered table-striped">
+                            <tbody id="table-body">
+                                <tr>
+                                    <td>
+                                        <input type="text" class="p-2 m-1" name="author-name" id="author-name"
+                                            placeholder="Input name" />
+                                    </td>
+                                    <td>
+                                        <input type="email" class="p-2 m-1" name="author-email" id="author-email"
+                                            placeholder="Input email" />
+                                    </td>
+                                    <td class="delete">
+                                        <!-- <input type="button" class="p-1 m-1 w-100 btn btn-danger btn-sm delete-btn" value="DELETE"/> -->
+                                        <input type="button" class="p-1 m-1 w-100 btn btn-primary btn-sm add-btn"
+                                            onclick="addAuthor()"
+                                            value="ADD" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="next-prev-btns">
+                        <button class="prev" onclick="prevPage()">Previous</button>
+                        <button class="next" onclick="nextPage()">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content for Page 4 -->
+            <div id="preview" class="page-content" style="display: none;">
+                <!-- Your content for the fourth page here -->
+                <div class="content-container">
+                    <h2>Preview your submission</h2>
+                    <br />
+                    <h6>Journal <strong>International journal of Pyaldksoac.com</strong></h6>
+                    <h6>Article type: <strong>Research Article</strong></h6>
+                    <div id="preview-content">
+                        <!-- This div will be populated with the collected data -->
+                        <table class="table table-bordered preview-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">
+                                        Manuscript details
+                                        <span onclick="showPage(0)" class="float-right preview-edit">Edit</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-4">Title</td>
+                                    <td class="col-8" id="preview-title"></td>
+                                </tr>
+                                <tr>
+                                    <td>Abstract</td>
+                                    <td id="preview-abstract"></td>
+                                </tr>
+                                <tr>
+                                    <td>File</td>
+                                    <td id="preview-file"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered preview-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">
+                                        Subject
+                                        <span onclick="showPage(1)" class="float-right preview-edit">Edit</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-4">Keywords</td>
+                                    <td class="col-8" id="preview-keywords"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered preview-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">
+                                        Authors
+                                        <span onclick="showPage(2)" class="float-right preview-edit">Edit</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="preview-authors">
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="next-prev-btns">
+                        <button class="prev" onclick="prevPage()">Previous</button>
+                        <button class="next" onclick="submitPage()">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Add more icons and page content as needed -->
+    </div>
+
+
+
+
+    <!-- ============ Script Files ================== -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/manuscript.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

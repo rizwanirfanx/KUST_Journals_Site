@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal front-end</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+      <!-- Header section start here -->
+   <section class="header">
+    <a href="" class="logo">Direct<span>Sciences</span></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="publicationPolicy.html">Publication Policy</a></li>
+        <li><a href="ethics.html">Ethics of Publication</a></li>
+        <li><a href="manuscript.html">Manuscript Submission</a></li>
+        <li><a href="aboutus.html">About us</a></li>
+        <a href="#" id="close"><i class="fa fa-times"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+</section><!-- Header section ends here -->
+
+<!-- Journal Post Section start -->
+<section class="journal">
+  <h1>Publish Your Journal</h1>
+  <p>Enter the required Data correctlly</p>
+    <div class="container">
+            <form action="/posts/store" method="POST">
+                
+                <div class="title">
+                    <label>Title</label>
+                    <input type="text" name="title" placeholder="Title">
+                </div>
+                
+                <div class="description">
+                    <label>Description</label>
+                    <input type="text" name="description" placeholder="Description" >
+                </div>
+                
+                <div class="content">
+                    <label>Content</label>
+                    <textarea name="content" placeholder="Content ..." cols="30" rows="10" ></textarea>
+                </div>
+                <div class="c-btn">
+                <button class="btn ">Create Post</button>
+                </div>
+            </form>
+        </div>
+</section>
+
+
+
+
+  <!-- Footer Section start here -->
+  <footer>
+    <p> Copyright 2015 Directsciences. All rights reserved. 
+      <span>Designed By</span> <a href="https://jon17.netlify.app/">Jon</a>
+    </p>
+  </footer><!-- Footer Section ends here -->
+
+  <!-- Script Files -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

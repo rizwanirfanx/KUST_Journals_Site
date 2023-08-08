@@ -1,0 +1,275 @@
+/* ==================================================
+         manuscript page styles starts here
+===================================================== */
+
+.mb {
+   margin-bottom: 20px;
+}
+
+.page-content {
+   display: none;
+   min-width: 600px;
+}
+
+.content-container {
+   padding: 0px 80px;
+}
+
+.icons {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 20%;
+   margin-top: 30px;
+}
+
+.icon-number {
+   width: 36px;
+}
+
+.active-icon {
+   cursor: pointer;
+   padding: 10px;
+   border-radius: 50%;
+   background-color: rgb(238, 238, 238);
+}
+
+.active-icon.active {
+   background-color: rgb(0, 0, 112);
+   color: white;
+}
+
+.page-contents {
+   margin-top: 70px;
+   margin-bottom: 30px;
+}
+
+/* ================= Page 1 Manuscript page  content css ==================== */
+.form-field {
+   margin-top: 20px;
+   margin-bottom: 30px;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+}
+
+.form-field label {
+   font-weight: bold;
+   font-size: 20px;
+}
+
+.mb label {
+   color: rgb(174, 59, 2);
+}
+
+.form-field input {
+   border: none;
+   border-bottom: 2px solid rgb(174, 59, 2);
+   /* Set the desired color */
+   padding: 0px;
+   outline: none;
+}
+
+.word-count {
+   position: absolute;
+   bottom: 0px;
+   right: 0;
+   color: rgb(207, 2, 2);
+}
+
+.radio-btns {
+   display: flex;
+   gap: 10px;
+}
+
+.form-field input[type="radio"] {
+   display: inline-block;
+   margin-left: 20px;
+}
+
+.next-prev-btns {
+   display: flex;
+   justify-content: space-between;
+}
+
+.next-prev-btns-next {
+   display: block;
+}
+
+.next-prev-btns-next button,
+.center button {
+   border: none;
+   padding: 5px 30px;
+   border-radius: 5px;
+   font-size: 18px;
+   box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.07);
+   background-color: rgb(0, 0, 112);
+   color: white;
+}
+
+.next-prev-btns button,
+.center button {
+   border: none;
+   padding: 5px 30px;
+   border-radius: 5px;
+   font-size: 18px;
+   box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.07);
+   background-color: rgb(0, 0, 112);
+   color: white;
+}
+
+.next-prev-btns button:hover {
+   box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= Page 2 Subject page content css ==================== */
+form {
+   position: relative;
+}
+
+/* Added styles for added keywords */
+#added-keywords {
+   display: flex;
+   gap: .5rem;
+   position: absolute;
+   bottom: 10px;
+   left: 220px;
+}
+
+#added-keywords>div {
+   padding: 4px 8px;
+   border-radius: 5px;
+   background-color: gainsboro;
+}
+
+/* ================= Page 3 Author page content css ==================== */
+.author {
+   display: flex;
+   justify-content: space-between;
+   padding: 30px 20px 20px 20px;
+   background-color: rgb(238, 238, 238);
+   height: 40px;
+   align-items: center;
+}
+
+.author-switch {
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+}
+
+.you {
+   background-color: rgb(0, 0, 112);
+   padding: 0px 10px 2px 10px;
+   border-radius: 30px;
+   font-size: 20px;
+   color: #fff;
+}
+
+@media (max-width: 700px) {
+   .you {
+      display: none;
+   }
+}
+
+.c-author {
+   background-color: rgb(167, 167, 167);
+   padding: 0px 10px 2px 10px;
+   border-radius: 20px;
+}
+
+@media (max-width: 1000px) {
+   .c-author {
+      display: none;
+   }
+}
+
+.center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 25vh;
+   flex-direction: column;
+   margin: auto;
+   text-align: center;
+}
+
+.author-detail {
+   color: red;
+}
+
+/* ======================= Preview page css ======================= */
+.field {
+   background-color: rgb(246, 246, 246);
+   padding: 2px 10px;
+   border-radius: 10px;
+   margin-bottom: 20px;
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.field a {
+   color: rgb(0, 0, 123);
+   text-decoration: none;
+   font-size: 20px;
+}
+
+#text-input1,
+#text-input2 {
+   margin: 0px;
+}
+
+.png-to-icon {
+   width: 40px;
+}
+
+.add-btn {
+   margin-top: 7rem;
+}
+
+.preview-table {
+   margin-top: 2rem;
+   font-size: 15px;
+   min-width: 500px;
+}
+
+.preview-table thead {
+   background: linear-gradient(to right, gray, lightgray);
+   border: none;
+}
+
+.preview-edit {
+   cursor: pointer;
+   color: purple;
+}
+
+#intro-bar {
+   width: 100%;
+   height: 30px;
+   background: linear-gradient(to right, gray, lightgray);
+   margin: 30px 0px;
+   border-top: gray 1px solid;
+   text-align: center;
+}
+
+#author-table td {
+   text-align: center;
+   font-size: 1rem;
+}
+
+#author-table .delete {
+   padding-top: 15px;
+   width: 60px;
+}
+
+#author-table .add-btn {
+   background-color: rgb(0, 0, 112);
+   margin-top: 10px;
+}
+
+#author-table .delete-btn {
+   background-color: rgb(153, 5, 5);
+   margin-top: 10px;
+}
